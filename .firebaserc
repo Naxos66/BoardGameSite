@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "locjeux-c4f09": {
+      "hosting": {
+        "BoardGameSite": [
+          "locjeux-c4f09"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "locjeux-c4f09"
+  }
+}

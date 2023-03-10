@@ -8,6 +8,13 @@ import { NbThemeModule, NbLayoutModule } from '@nebular/theme';
 import { HttpClientModule } from '@angular/common/http';
 import {  NbAuthModule, NbAuthSimpleToken, NbDummyAuthStrategy, NbPasswordAuthStrategy } from '@nebular/auth';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideAuth,getAuth } from '@angular/fire/auth';
+import { provideFirestore,getFirestore } from '@angular/fire/firestore';
+import { provideStorage,getStorage } from '@angular/fire/storage';
+import { AngularFireModule } from '@angular/fire/compat';
+
 
 
 
@@ -27,6 +34,7 @@ class PayloadDummy extends NbAuthSimpleToken {
     BrowserAnimationsModule,
     NbThemeModule.forRoot({ name: 'dark' }),
     NbLayoutModule,
+    AngularFireModule,
     HttpClientModule,
     NbAuthModule.forRoot({
       strategies: [
@@ -53,7 +61,11 @@ class PayloadDummy extends NbAuthSimpleToken {
         }
       },
     }),
-    NbEvaIconsModule
+    NbEvaIconsModule,
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideAuth(() => getAuth()),
+    provideFirestore(() => getFirestore()),
+    provideStorage(() => getStorage())
   ],
   providers: [
   ],
