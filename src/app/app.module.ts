@@ -16,6 +16,7 @@ import {provideStorage, getStorage} from '@angular/fire/storage';
 import {AngularFireModule} from '@angular/fire/compat';
 import {NbFirebaseAuthModule, NbFirebasePasswordStrategy} from '@nebular/firebase-auth';
 import { LocationsComponent } from './locations/locations.component';
+import { FromulaireComponent } from './fromulaire/fromulaire.component';
 
 
 class PayloadDummy extends NbAuthSimpleToken {
@@ -27,7 +28,8 @@ class PayloadDummy extends NbAuthSimpleToken {
 @NgModule({
   declarations: [
     AppComponent,
-    LocationsComponent
+    LocationsComponent,
+    FromulaireComponent
   ],
   imports: [
     BrowserModule,
