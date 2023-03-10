@@ -15,6 +15,7 @@ import {provideFirestore, getFirestore} from '@angular/fire/firestore';
 import {provideStorage, getStorage} from '@angular/fire/storage';
 import {AngularFireModule} from '@angular/fire/compat';
 import {NbFirebaseAuthModule, NbFirebasePasswordStrategy} from '@nebular/firebase-auth';
+import { LocationsComponent } from './locations/locations.component';
 
 
 class PayloadDummy extends NbAuthSimpleToken {
@@ -25,7 +26,8 @@ class PayloadDummy extends NbAuthSimpleToken {
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LocationsComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +42,7 @@ class PayloadDummy extends NbAuthSimpleToken {
       strategies: [
         NbFirebasePasswordStrategy.setup({
           name: 'password',
-          login:{redirect:{success:'/register', failure:null}}
+          login:{redirect:{success:'/locations', failure:null}}
         }),
       ],
       forms: {
