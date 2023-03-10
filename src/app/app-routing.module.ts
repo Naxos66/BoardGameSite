@@ -10,8 +10,8 @@ import {
   NbResetPasswordComponent,
 } from '@nebular/auth';
 
-const routes: Routes = [
-
+const routes:  Routes = [
+  
   {
     path: 'auth',
     component: NbAuthComponent,
