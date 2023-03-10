@@ -1,21 +1,20 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NbThemeModule, NbLayoutModule } from '@nebular/theme';
-import { HttpClientModule } from '@angular/common/http';
-import {  NbAuthModule, NbAuthSimpleToken, NbDummyAuthStrategy, NbPasswordAuthStrategy } from '@nebular/auth';
-import { NbEvaIconsModule } from '@nebular/eva-icons';
-import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
-import { environment } from '../environments/environment';
-import { provideAuth,getAuth } from '@angular/fire/auth';
-import { provideFirestore,getFirestore } from '@angular/fire/firestore';
-import { provideStorage,getStorage } from '@angular/fire/storage';
-import { AngularFireModule } from '@angular/fire/compat';
-
-
+import {AppRoutingModule} from './app-routing.module';
+import {AppComponent} from './app.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {NbThemeModule, NbLayoutModule} from '@nebular/theme';
+import {HttpClientModule} from '@angular/common/http';
+import {NbAuthModule, NbAuthSimpleToken, NbDummyAuthStrategy, NbPasswordAuthStrategy} from '@nebular/auth';
+import {NbEvaIconsModule} from '@nebular/eva-icons';
+import {initializeApp, provideFirebaseApp} from '@angular/fire/app';
+import {environment} from '../environments/environment';
+import {provideAuth, getAuth} from '@angular/fire/auth';
+import {provideFirestore, getFirestore} from '@angular/fire/firestore';
+import {provideStorage, getStorage} from '@angular/fire/storage';
+import {AngularFireModule} from '@angular/fire/compat';
+import {NbFirebaseAuthModule, NbFirebasePasswordStrategy} from '@nebular/firebase-auth';
 
 
 class PayloadDummy extends NbAuthSimpleToken {
@@ -32,33 +31,55 @@ class PayloadDummy extends NbAuthSimpleToken {
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    NbThemeModule.forRoot({ name: 'dark' }),
+    NbThemeModule.forRoot({name: 'dark'}),
     NbLayoutModule,
-    AngularFireModule,
+    AngularFireModule.initializeApp(environment.firebase),
     HttpClientModule,
+    NbFirebaseAuthModule,
     NbAuthModule.forRoot({
       strategies: [
-        NbDummyAuthStrategy.setup({
-          name: 'email',
-          token: {
-            class: PayloadDummy
-          }
-        })
+        NbFirebasePasswordStrategy.setup({
+          name: 'password',
+          login:{redirect:{success:'/register', failure:null}}
+        }),
       ],
       forms: {
         login: {
-          redirectDelay: 500, // delay before redirect after a successful login, while success message is shown to the user
-          rememberMe: true,   // whether to show or not the `rememberMe` checkbox
-          showMessages: {     // show/not show success/error messages
-            success: true,
-            error: true,
+          strategy: 'password',
+          rememberMe: true,
+          socialLinks: [],
+        },
+        register: {
+          strategy: 'password',
+          terms: true,
+          socialLinks: [],
+        },
+        logout: {
+          strategy: 'password',
+        },
+        requestPassword: {
+          strategy: 'password',
+          socialLinks: [],
+        },
+        resetPassword: {
+          strategy: 'password',
+          socialLinks: [],
+        },
+        validation: {
+          password: {
+            required: true,
+            minLength: 6,
+            maxLength: 50,
           },
-          redirect: {
-            success: '/main',
-            failure: null, // stay on the same page
+          email: {
+            required: true,
           },
-
-        }
+          fullName: {
+            required: false,
+            minLength: 4,
+            maxLength: 50,
+          },
+        },
       },
     }),
     NbEvaIconsModule,
@@ -67,8 +88,9 @@ class PayloadDummy extends NbAuthSimpleToken {
     provideFirestore(() => getFirestore()),
     provideStorage(() => getStorage())
   ],
-  providers: [
-  ],
-  bootstrap: [AppComponent]
+  providers: [],
+  bootstrap:[AppComponent]
 })
-export class AppModule { }
+
+export class AppModule {
+}
