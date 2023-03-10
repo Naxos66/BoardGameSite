@@ -17,6 +17,7 @@ import {AngularFireModule} from '@angular/fire/compat';
 import {NbFirebaseAuthModule, NbFirebasePasswordStrategy} from '@nebular/firebase-auth';
 import { LocationsComponent } from './locations/locations.component';
 import { FromulaireComponent } from './fromulaire/fromulaire.component';
+import {ReactiveFormsModule} from "@angular/forms";
 
 
 class PayloadDummy extends NbAuthSimpleToken {
@@ -44,7 +45,7 @@ class PayloadDummy extends NbAuthSimpleToken {
       strategies: [
         NbFirebasePasswordStrategy.setup({
           name: 'password',
-          login:{redirect:{success:'/locations', failure:null}}
+          login: {redirect: {success: '/locations', failure: null}}
         }),
       ],
       forms: {
@@ -90,7 +91,8 @@ class PayloadDummy extends NbAuthSimpleToken {
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),
-    provideStorage(() => getStorage())
+    provideStorage(() => getStorage()),
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap:[AppComponent]

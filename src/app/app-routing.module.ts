@@ -1,4 +1,5 @@
 import { LocationsComponent } from './locations/locations.component';
+import { FromulaireComponent } from './fromulaire/fromulaire.component';
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 
@@ -41,6 +42,10 @@ const routes: Routes = [
       path: 'locations',
       component: LocationsComponent,
     },
+  {
+    path: 'addLocation',
+    component: FromulaireComponent,
+  },
     {
       path: '**',
       redirectTo: 'login'
