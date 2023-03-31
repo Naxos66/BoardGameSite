@@ -24,7 +24,6 @@ export class ModifierLocationComponent implements OnInit {
         if (location) {
           this.location = location;
           this.locationForm.patchValue(this.location);
-          this.router.navigate(['/allMyLocations']);
         }
       });
     }
@@ -42,6 +41,7 @@ export class ModifierLocationComponent implements OnInit {
   updateLocation(): void {
     const updatedLocation: Location = this.locationForm.value;
     this.db.collection('LOCATIONS').doc(this.locationId).update(updatedLocation);
+    this.router.navigate(['/allMyLocations']);  
   }
 
   resetForm(): void {
