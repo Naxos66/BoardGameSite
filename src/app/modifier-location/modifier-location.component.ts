@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {AngularFireDatabase} from "@angular/fire/compat/database";
+import {AngularFirestore} from "@angular/fire/compat/firestore";
 
 @Component({
   selector: 'app-modifier-location',
@@ -13,20 +14,17 @@ export class ModifierLocationComponent implements OnInit {
   locationId!: any;
   location!: Location;
 
-  constructor(
-    private fb: FormBuilder,
-    private route: ActivatedRoute,
-    private db: AngularFireDatabase
-  ) { }
+  constructor( private fb: FormBuilder,private route: ActivatedRoute, private db: AngularFirestore,private router: Router ) { }
 
   ngOnInit(): void {
     this.locationId = this.route.snapshot.paramMap.get('id');
     this.initForm();
     if (this.locationId) {
-      this.db.object<Location>(`LOCATIONS/${this.locationId}`).valueChanges().subscribe((location) => {
+      this.db.collection('LOCATIONS').doc<any>(this.locationId).valueChanges().subscribe(location => {
         if (location) {
           this.location = location;
           this.locationForm.patchValue(this.location);
+          this.router.navigate(['/allMyLocations']);
         }
       });
     }
@@ -43,7 +41,7 @@ export class ModifierLocationComponent implements OnInit {
   }
   updateLocation(): void {
     const updatedLocation: Location = this.locationForm.value;
-    this.db.object(`LOCATIONS/${this.locationId}`).update(updatedLocation);
+    this.db.collection('LOCATIONS').doc(this.locationId).update(updatedLocation);
   }
 
   resetForm(): void {
