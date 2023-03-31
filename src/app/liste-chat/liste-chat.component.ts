@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {AngularFirestore} from "@angular/fire/compat/firestore";
 import {AngularFireAuth} from "@angular/fire/compat/auth";
 
@@ -8,15 +8,21 @@ import {AngularFireAuth} from "@angular/fire/compat/auth";
   styleUrls: ['./liste-chat.component.scss']
 })
 export class ListeChatComponent implements OnInit {
-  userId!: string ;
+  userId!: string;
   conversations: any[] = [];
-  constructor(private afs: AngularFirestore,private auth: AngularFireAuth) { }
+
+  constructor(private afs: AngularFirestore, private auth: AngularFireAuth) {
+  }
 
   ngOnInit(): void {
-    this.auth.authState.subscribe(user => {if (user) {this.userId= user.uid;}});
-    this.afs.collection('CONVERSATIONS', ref => ref.where('idClient', '==', this.userId)).valueChanges().subscribe(conversations => {
-      this.conversations = conversations;
-      
+    console.log("test")
+    this.auth.authState.subscribe(user => {
+      if (user) {
+        this.userId = user.uid;
+        this.afs.collection('CONVERSATIONS', ref => ref.where('idClient', '==', this.userId).where('idLoueur', '==', this.userId)).valueChanges().subscribe(conversations => {
+          this.conversations = conversations;
+          console.log(conversations)  });
+      }
     });
   }
 
