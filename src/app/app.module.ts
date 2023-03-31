@@ -1,3 +1,4 @@
+import { AuthGuard } from './auth.guard';
 import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 
@@ -105,7 +106,7 @@ class PayloadDummy extends NbAuthSimpleToken {
     provideStorage(() => getStorage()),
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [AuthGuard],
   bootstrap:[AppComponent]
 })
 
