@@ -27,7 +27,6 @@
         <h5 *ngIf="location.disponible" style="color:#00c500">Disponible</h5>
         <h5 *ngIf="!location.disponible" style="color:red">Non Disponible</h5>
         <button routerLink="/chat/{{location.id}}">Contacter</button>
-        <br><br>
         <button *ngIf="location.idLoueur == userId"
                 [disabled]="true"
                 class="btn-louer">
