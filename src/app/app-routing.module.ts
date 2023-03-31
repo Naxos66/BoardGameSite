@@ -2,6 +2,7 @@ import { LocationsComponent } from './locations/locations.component';
 import { FromulaireComponent } from './fromulaire/fromulaire.component';
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
+import { AuthGuard } from './auth.guard';
 
 import {
   NbAuthComponent,
@@ -16,6 +17,7 @@ import {ModifierLocationComponent} from "./modifier-location/modifier-location.c
 import {LocationsAllComponent} from "./locations-all/locations-all.component";
 import {ListeChatComponent} from "./liste-chat/liste-chat.component";
 import {ChatComponent} from "./chat/chat.component";
+
 
 const routes: Routes = [
 
@@ -46,34 +48,43 @@ const routes: Routes = [
     {
       path: 'locations',
       component: LocationsComponent,
+      canActivate: [AuthGuard]
     },
   {
     path: 'addLocation',
     component: FromulaireComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'allMyLocations',
     component: ListeLocationsComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'modifierLocation/:id',
     component: ModifierLocationComponent,
-  }, {
+    canActivate: [AuthGuard]
+  }, 
+  {
     path: 'locationsAll',
     component: LocationsAllComponent,
-  }, {
+    canActivate: [AuthGuard]
+  }, 
+  {
     path: 'liste-chats',
     component: ListeChatComponent,
-  }, {
+    canActivate: [AuthGuard]
+  }, 
+  {
     path: 'chat/:id',
     component: ChatComponent,
+    canActivate: [AuthGuard]
   },
-    {
-      path: '**',
-      redirectTo: 'login'
-    }
-  ]
-;
+  {
+    path: '**',
+    redirectTo: 'login'
+  }
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

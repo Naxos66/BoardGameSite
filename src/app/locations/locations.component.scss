@@ -1,50 +1,90 @@
-.location-grid {
+// Variables
+$primary-color: #3498db;
+$secondary-color: #2d3e50;
+$logout-color: #ff0000;
+$logout-hover-color: #cc0000;
+
+// Style pour la nav
+nav {
   display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
   justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: $secondary-color;
+
+  button {
+    background-color: $primary-color;
+    border: none;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+
+    &:hover {
+      background-color: darken($primary-color, 10%);
+    }
+
+    &.logout {
+      background-color: $logout-color;
+
+      &:hover {
+        background-color: $logout-hover-color;
+      }
+    }
+  }
 }
 
-.location-card {
-  color: black;
-  width: 25%; /* Réduire la largeur */
-  background-color: #484343;
-  border: 1px solid #737373;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-}
+// Style pour la section de la liste de locations
+.location-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: 1rem;
+  padding: 1rem;
 
-.location-card img {
-  width: 100%;
-  height:  30%; /* Définir une hauteur */
-  object-fit: cover; /* Adapter les images */
-}
+  .location-card {
+    color: black;
+    width: 25%;
+    background-color: #484343;
+    border: 1px solid #737373;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 
-.location-card .details {
-  padding: 20px;
-}
+    img {
+      width: 100%;
+      height: 30%;
+      object-fit: cover;
+    }
 
-.location-card h5 {
-  font-size: 18px;
-  margin: 0 0 10px;
-}
+    .details {
+      padding: 20px;
 
-.location-card button {
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
+      h5 {
+        font-size: 18px;
+        margin: 0 0 10px;
+      }
 
-.location-card button:hover {
-  background-color: #0069d9;
-}
-.btn-louer[disabled] {
-  opacity: 0.5; /* reduce opacity of button when disabled */
-  cursor: not-allowed; /* change cursor to not-allowed when disabled */
+      button {
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+
+        &:hover {
+          background-color: #0069d9;
+        }
+
+        &:disabled {
+          opacity: 0.5;
+          cursor: not-allowed;
+        }
+      }
+    }
+  }
 }
