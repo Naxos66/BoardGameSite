@@ -17,7 +17,12 @@ import {AngularFireModule} from '@angular/fire/compat';
 import {NbFirebaseAuthModule, NbFirebasePasswordStrategy} from '@nebular/firebase-auth';
 import { LocationsComponent } from './locations/locations.component';
 import { FromulaireComponent } from './fromulaire/fromulaire.component';
-import {ReactiveFormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { ListeLocationsComponent } from './liste-locations/liste-locations.component';
+import { ModifierLocationComponent } from './modifier-location/modifier-location.component';
+import { LocationsAllComponent } from './locations-all/locations-all.component';
+import { ListeChatComponent } from './liste-chat/liste-chat.component';
+import { ChatComponent } from './chat/chat.component';
 
 
 class PayloadDummy extends NbAuthSimpleToken {
@@ -30,10 +35,16 @@ class PayloadDummy extends NbAuthSimpleToken {
   declarations: [
     AppComponent,
     LocationsComponent,
-    FromulaireComponent
+    FromulaireComponent,
+    ListeLocationsComponent,
+    ModifierLocationComponent,
+    LocationsAllComponent,
+    ListeChatComponent,
+    ChatComponent
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     NbThemeModule.forRoot({name: 'dark'}),

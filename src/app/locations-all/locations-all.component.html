@@ -1,0 +1,54 @@
+<table class="table" style="color:white">
+  <thead>
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">Titre</th>
+    <th scope="col">Statut</th>
+    <th scope="col">Action</th>
+  </tr>
+  </thead>
+  <tbody>
+  <ng-container *ngIf="mesLocations && mesLocations.length > 0; else noLocationsLouees">
+    <tr *ngFor="let locationLouee of mesLocations; let i = index">
+      <th scope="row">{{ i + 1 }}</th>
+      <td>{{ locationLouee.jeuName }}</td>
+      <td>Location en cours</td>
+      <td>
+        <button type="button" class="btn btn-primary" (click)="validerLocation(locationLouee.id_jeu,locationLouee.id)">Retourner</button>
+      </td>
+    </tr>
+  </ng-container>
+  <ng-template #noLocationsLouees>
+    <tr>
+      <td colspan="4">Vous n'avez loué aucun jeu pour le moment.</td>
+    </tr>
+  </ng-template>
+  </tbody>
+</table>
+<table class="table" style="color:white">
+  <thead>
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">Titre</th>
+    <th scope="col">Statut</th>
+    <th scope="col">Action</th>
+  </tr>
+  </thead>
+  <tbody>
+  <ng-container *ngIf="locations && locations.length > 0; else noLocationsLouees">
+    <tr *ngFor="let locationLouee of locations; let i = index">
+      <th scope="row">{{ i + 1 }}</th>
+      <td>{{ locationLouee.jeuName }}</td>
+      <td>Location en cours</td>
+      <td>
+        <button type="button" class="btn btn-primary" (click)="validerLocation(locationLouee.id_jeu,locationLouee.id)">Retourner</button>
+      </td>
+    </tr>
+  </ng-container>
+  <ng-template #noLocationsLouees>
+    <tr>
+      <td colspan="4">Vous n'avez loué aucun jeu pour le moment.</td>
+    </tr>
+  </ng-template>
+  </tbody>
+</table>

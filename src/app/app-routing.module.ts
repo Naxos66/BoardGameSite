@@ -11,6 +11,11 @@ import {
   NbRequestPasswordComponent,
   NbResetPasswordComponent,
 } from '@nebular/auth';
+import {ListeLocationsComponent} from "./liste-locations/liste-locations.component";
+import {ModifierLocationComponent} from "./modifier-location/modifier-location.component";
+import {LocationsAllComponent} from "./locations-all/locations-all.component";
+import {ListeChatComponent} from "./liste-chat/liste-chat.component";
+import {ChatComponent} from "./chat/chat.component";
 
 const routes: Routes = [
 
@@ -45,6 +50,23 @@ const routes: Routes = [
   {
     path: 'addLocation',
     component: FromulaireComponent,
+  },
+  {
+    path: 'allMyLocations',
+    component: ListeLocationsComponent,
+  },
+  {
+    path: 'modifierLocation/:id',
+    component: ModifierLocationComponent,
+  }, {
+    path: 'locationsAll',
+    component: LocationsAllComponent,
+  }, {
+    path: 'liste-chats',
+    component: ListeChatComponent,
+  }, {
+    path: 'chat/:id',
+    component: ChatComponent,
   },
     {
       path: '**',

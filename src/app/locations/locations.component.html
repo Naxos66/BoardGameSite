@@ -9,20 +9,26 @@
 <body>
 <nav>
   <button onclick="window.location='/addLocation'">Ajouter une Location</button>
+  <button onclick="window.location='/allMyLocations'">Mes annonces</button>
+  <button onclick="window.location='/locationsAll'">Mes locations</button>
+  <button onclick="window.location='/liste-chats/'">Boite de reception</button>
 </nav>
+
 <div>
-  <h1>Les locations :</h1>
+  <h1>Liste des locations :</h1>
   <div class="location-grid">
-    <div *ngFor="let location of locations | async" class="location-card">
+    <div *ngFor="let location of locations | async " class="location-card">
       <img [src]="location.photo">
       <div class="details">
         <h3>{{location.nom}}</h3>
         <h5>{{location.description}}</h5>
         <h5>{{location.prix}}  €/jour</h5>
         <h5 *ngIf="location.disponible" style="color:#00c500">Disponible</h5>
-        <h5 *ngIf="!location.disponible" style="color:red">Non Disponible</h5>
-        <button>Contacter</button><br><br>
-        <button>Louer</button>
+        <h5 *ngIf="!location.disponible" style="color:red" >Non Disponible</h5>
+        <button routerLink="/chat/{{location.id}}"  >Contacter</button><br><br>
+        <button [disabled]="!location.disponible" class="btn-louer" (click)="louerLocation(location.id,location.idLoueur, location.nom)">
+          Louer
+        </button>
       </div>
     </div>
   </div>

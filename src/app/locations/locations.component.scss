@@ -44,3 +44,7 @@
 .location-card button:hover {
   background-color: #0069d9;
 }
+.btn-louer[disabled] {
+  opacity: 0.5; /* reduce opacity of button when disabled */
+  cursor: not-allowed; /* change cursor to not-allowed when disabled */
+}

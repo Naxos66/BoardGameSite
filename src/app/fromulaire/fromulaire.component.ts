@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import { Router } from '@angular/router';
 
@@ -12,7 +13,7 @@ export class FromulaireComponent {
   formulaire: FormGroup;
 
 
-  constructor(private db: AngularFirestore, private router: Router) {
+  constructor(private db: AngularFirestore, private router: Router, private afAuth:AngularFireAuth) {
     this.formulaire = new FormGroup({
       nom: new FormControl('', Validators.required),
       description: new FormControl('', Validators.required),
@@ -24,17 +25,21 @@ export class FromulaireComponent {
 
   createProduct() {
     if (this.formulaire.valid) {
-    const location = {
-      nom: this.formulaire.value.nom,
-      description: this.formulaire.value.description,
-      photo: this.formulaire.value.photo,
-      disponible: true,
-      prix: this.formulaire.value.prix,
-      idLoueur:"1"
-    };
-    this.db.collection('LOCATIONS').add(location);
-    this.formulaire.reset();
-    this.router.navigate(['/locations']);
-  }
+      const user = this.afAuth.authState.subscribe(user => {
+        if (user) {
+          const location = {
+            nom: this.formulaire.value.nom,
+            description: this.formulaire.value.description,
+            photo: this.formulaire.value.photo,
+            disponible: true,
+            prix: this.formulaire.value.prix,
+            idLoueur: user.uid
+          };
+          this.db.collection('LOCATIONS').add(location);
+          this.formulaire.reset();
+          this.router.navigate(['/locations']);
+        }
+      });
+    }
   }
 }
