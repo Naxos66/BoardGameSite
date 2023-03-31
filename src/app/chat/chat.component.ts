@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Observable, of} from "rxjs";
 import {AngularFirestore, AngularFirestoreCollection} from "@angular/fire/compat/firestore";
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {doc} from "@angular/fire/firestore";
 
 @Component({
@@ -11,9 +11,8 @@ import {doc} from "@angular/fire/firestore";
 })
 export class ChatComponent {
   message: any
-  loc:any
-  locationsCollection!:any
-  constructor(private db: AngularFirestore, private route: ActivatedRoute) {
+
+  constructor(private db: AngularFirestore, private route: ActivatedRoute,private router: Router) {
   }
 
   sendMessage() {
@@ -22,27 +21,27 @@ export class ChatComponent {
     }
     const date = new Date();
     const timestamp = date.getTime();
-    const idLocation:any = this.route.snapshot.paramMap.get('idLocation');
-    this.db.collection('LOCATIONS').get(idLocation).toPromise().then((locatio:any) => {
-      if (locatio.exists) {
-        const location = locatio.data();
-        console.log(location);
-      } else {
-        console.log("Le document n'existe pas !");
+    // const idLocation:any = this.route.snapshot.paramMap.get('idLocation');
+    // console.log(idLocation)
+    const idLocation = this.route.snapshot.paramMap.get('id') ?? 'default';
+    console.log(idLocation)
+    this.db.collection('LOCATIONS').doc<any>(idLocation).valueChanges().subscribe(location => {
+      console.log(location);
+      const newMessage = {
+        idJeu: this.route.snapshot.paramMap.get('id'),
+        idClient: this.route.snapshot.paramMap.get('id'),
+        idLoueur: location.idLoueur,
+        dateHeureMinuteSeconde: timestamp,
+        Message: this.message,
+        nomJeu: location.nom,
+      };
+      try{
+        this.db.collection('CONVERSATIONS').add(newMessage);
+        this.message = '';
+        this.router.navigate(['/locations']);
+      }catch (e){
+        console.log("erreur")
       }
-    }).catch(error => {
-      console.log("Erreur lors de la récupération de l'objet :", error);
     });
-    console.log(this.loc)
-    const newMessage = {
-      idJeu: this.route.snapshot.paramMap.get('id'),
-      idClient: this.route.snapshot.paramMap.get('id'),
-      idLoueur: this.loc.idLoueur,
-      dateHeureMinuteSeconde: timestamp,
-      Message: this.message,
-      nomJeu: this.loc.nom
-    };
-    this.db.collection('CONVERSATIONS').add(newMessage);
-    this.message = '';
   }
 }
