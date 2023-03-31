@@ -1,0 +1,29 @@
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+}
+
+th {
+  background-color: #222b45;
+  color: white;
+}
+
+tr:nth-child(even) {
+  background-color: #19284b;
+}
+
+.gris {
+  color: grey;
+}
+
+
+.btn-primary:hover {
+  background-color: #0029ff;
+}
+

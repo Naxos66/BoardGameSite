@@ -121,18 +121,18 @@ nav button {
         .details {
           padding: 1rem;
           text-align: center;
-        
+
           h3 {
             margin-bottom: 0.5rem;
             font-size: 1.5rem;
           }
-        
+
           h5 {
             margin-bottom: 0.5rem;
             font-size: 1rem;
             color: #888;
           }
-        
+
           button {
             margin-top: 1rem;
             padding: 0.5rem 1rem;
@@ -142,12 +142,12 @@ nav button {
             color: white;
             font-size: 1rem;
             cursor: pointer;
-        
+
             &:hover {
               background-color: #0b5ed7;
             }
           }
-        
+
           .btn-louer {
             margin-top: 1rem;
             padding: 0.5rem 1rem;
@@ -157,11 +157,11 @@ nav button {
             color: white;
             font-size: 1rem;
             cursor: pointer;
-        
+
             &:hover {
               background-color: #1e7e34;
             }
-        
+
             &[disabled] {
               background-color: #ccc;
               cursor: not-allowed;
@@ -171,4 +171,4 @@ nav button {
       }
     }
   }
-}        
+}

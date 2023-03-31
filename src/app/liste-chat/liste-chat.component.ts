@@ -15,13 +15,20 @@ export class ListeChatComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log("test")
     this.auth.authState.subscribe(user => {
       if (user) {
         this.userId = user.uid;
-        this.afs.collection('CONVERSATIONS', ref => ref.where('idClient', '==', this.userId).where('idLoueur', '==', this.userId)).valueChanges().subscribe(conversations => {
+        console.log(this.userId)
+        this.afs.collection('CONVERSATIONS', ref => ref
+          .where('idClient', '==', this.userId)
+        ).valueChanges().subscribe(conversations => {
           this.conversations = conversations;
-          console.log(conversations)  });
+        });
+        this.afs.collection('CONVERSATIONS', ref => ref
+          .where('idLoueur', '==', this.userId)
+        ).valueChanges().subscribe((conversations:any) => {
+          this.conversations +=conversations;
+        });
       }
     });
   }
