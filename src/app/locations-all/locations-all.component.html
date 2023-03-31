@@ -1,3 +1,4 @@
+<button type="button" class="btn btn-primary" routerLink="/locations">Retour</button>
 <table class="table" style="color:white">
   <thead>
   <tr>
@@ -14,7 +15,8 @@
       <td>{{ locationLouee.jeuName }}</td>
       <td>Location en cours</td>
       <td>
-        <button type="button" class="btn btn-primary" (click)="validerLocation(locationLouee.id_jeu,locationLouee.id)">Retourner</button>
+        <button type="button" class="btn btn-primary" (click)="validerLocation(locationLouee.id_jeu,locationLouee.id)">Retourner
+        </button>
       </td>
     </tr>
   </ng-container>
