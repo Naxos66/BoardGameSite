@@ -8,15 +8,15 @@
 </head>
 <body>
 <nav>
-  <button onclick="window.location='/addLocation'">Ajouter une Location</button>
+  <button onclick="window.location='/addLocation'">Ajouter une location</button>
   <button onclick="window.location='/allMyLocations'">Mes annonces</button>
   <button onclick="window.location='/locationsAll'">Mes locations</button>
-  <button onclick="window.location='/liste-chats/'">Boite de reception</button>
-  <button class="logout" onclick="window.location='/login/'">Déconexion</button>
+  <button onclick="window.location='/liste-chats/'">Boîte de reception</button>
+  <button class="logout" onclick="window.location='/login/'">Déconnexion</button>
 </nav>
 
 <div>
-  <h1>Liste des locations :</h1>
+  <br><br>
   <div class="location-grid">
     <div *ngFor="let location of locations | async " class="location-card">
       <img [src]="location.photo">

@@ -1,90 +1,174 @@
-// Variables
-$primary-color: #3498db;
-$secondary-color: #2d3e50;
-$logout-color: #ff0000;
-$logout-hover-color: #cc0000;
+// Couleur principale de fond pour la page
+$bg-color: #151b30;
 
-// Style pour la nav
+// Couleurs principales pour les éléments de la carte de location
+$card-bg: #cecece;
+$card-border: #ddd;
+$card-shadow: rgba(0, 0, 0, 0.2);
+
+// Tailles principales pour les éléments de la carte de location
+$card-height: 500px;
+$card-width: 300px;
+$card-padding: 20px;
+
+// Styles principaux pour les éléments de la carte de location
+$border-radius: 10px;
+$font-family: Arial, sans-serif;
+$font-size: 16px;
+$font-weight: 400;
+$line-height: 1.4;
+
+// Appliquer les styles au document HTML
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: $bg-color;
+  font-family: $font-family;
+  font-size: $font-size;
+  line-height: $line-height;
+}
+
 nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem;
-  background-color: $secondary-color;
+  padding: 10px;
+  background-color: $bg-color;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
 
-  button {
-    background-color: $primary-color;
-    border: none;
-    color: #fff;
-    font-size: 1rem;
-    font-weight: bold;
-    padding: 0.5rem 1rem;
-    border-radius: 0.5rem;
-    cursor: pointer;
+nav button {
+  font-size: 16px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: #ddd;
+  color: #000000;
+  cursor: pointer;
+}
 
-    &:hover {
-      background-color: darken($primary-color, 10%);
-    }
+@media screen and (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    align-items: stretch;
+  }
 
-    &.logout {
-      background-color: $logout-color;
-
-      &:hover {
-        background-color: $logout-hover-color;
-      }
-    }
+  nav button {
+    margin-bottom: 10px;
+    width: 100%;
   }
 }
 
-// Style pour la section de la liste de locations
 .location-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  grid-gap: 1rem;
-  padding: 1rem;
+  grid-gap: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
 
-  .location-card {
-    color: black;
-    width: 25%;
-    background-color: #484343;
-    border: 1px solid #737373;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-
-    img {
-      width: 100%;
-      height: 30%;
-      object-fit: cover;
+.location-card {
+  background-color: $card-bg;
+  border: 1px solid $card-border;
+  border-radius: $border-radius;
+  box-shadow: 0 5px 20px $card-shadow;
+  height: $card-height;
+  overflow: hidden;
+  transition: all 0.2s ease-in-out;
+  width: $card-width;
+  &:hover {
+    box-shadow: 0 10px 0px $card-shadow;
+    transform: translateY(-10px);
+  }
+  img {
+    height: 200px;
+    object-fit: cover;
+    width: 100%;
+  }
+  .details {
+    padding: $card-padding;
+    h3, h5 {
+      margin: 0;
     }
-
-    .details {
-      padding: 20px;
-
-      h5 {
-        font-size: 18px;
-        margin: 0 0 10px;
-      }
-
-      button {
-        background-color: #007bff;
-        color: white;
-        border: none;
-        border-radius: 5px;
-        padding: 10px 20px;
-        font-size: 16px;
-        cursor: pointer;
-        transition: background-color 0.3s;
-
-        &:hover {
-          background-color: #0069d9;
-        }
-
-        &:disabled {
-          opacity: 0.5;
-          cursor: not-allowed;
+    h3 {
+      font-size: $font-size * 1.2;
+      font-weight: $font-weight;
+      color: #000000;
+    }
+    h5 {
+      color: #666;
+      font-size: $font-size;
+      font-weight: $font-weight;
+      line-height: $line-height;
+      margin: 10px 0;
+    }
+    button {
+      background-color: #333;
+      border: none;
+      border-radius: 5px;
+      color: #fff;
+      cursor: pointer;
+      font-size: $font-size;
+      font-weight: $font-weight;
+      padding: 10px;
+      transition: all 0.2s ease-in-out;
+      &:hover {
+        background-color: #555;
+        .details {
+          padding: 1rem;
+          text-align: center;
+        
+          h3 {
+            margin-bottom: 0.5rem;
+            font-size: 1.5rem;
+          }
+        
+          h5 {
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+            color: #888;
+          }
+        
+          button {
+            margin-top: 1rem;
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 2rem;
+            background-color: #0d6efd;
+            color: white;
+            font-size: 1rem;
+            cursor: pointer;
+        
+            &:hover {
+              background-color: #0b5ed7;
+            }
+          }
+        
+          .btn-louer {
+            margin-top: 1rem;
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 2rem;
+            background-color: #28a745;
+            color: white;
+            font-size: 1rem;
+            cursor: pointer;
+        
+            &:hover {
+              background-color: #1e7e34;
+            }
+        
+            &[disabled] {
+              background-color: #ccc;
+              cursor: not-allowed;
+            }
+          }
         }
       }
     }
   }
-}
+}        
