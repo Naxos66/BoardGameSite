@@ -78,6 +78,11 @@ const routes: Routes = [
   },
   {
     path: 'chat/:id',
+    component: ChatComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'discussion/:id',
     component: DiscussionComponent,
     canActivate: [AuthGuard]
   },
