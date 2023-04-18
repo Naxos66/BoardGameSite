@@ -17,6 +17,7 @@ import {ModifierLocationComponent} from "./modifier-location/modifier-location.c
 import {LocationsAllComponent} from "./locations-all/locations-all.component";
 import {ListeChatComponent} from "./liste-chat/liste-chat.component";
 import {ChatComponent} from "./chat/chat.component";
+import {DiscussionComponent} from "./discussion/discussion.component";
 
 
 const routes: Routes = [
@@ -64,20 +65,20 @@ const routes: Routes = [
     path: 'modifierLocation/:id',
     component: ModifierLocationComponent,
     canActivate: [AuthGuard]
-  }, 
+  },
   {
     path: 'locationsAll',
     component: LocationsAllComponent,
     canActivate: [AuthGuard]
-  }, 
+  },
   {
     path: 'liste-chats',
     component: ListeChatComponent,
     canActivate: [AuthGuard]
-  }, 
+  },
   {
     path: 'chat/:id',
-    component: ChatComponent,
+    component: DiscussionComponent,
     canActivate: [AuthGuard]
   },
   {
