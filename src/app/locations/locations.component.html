@@ -30,6 +30,9 @@
                 [disabled]="true"
                 routerLink="/chat/{{location.id}}">Contacter
         </button>
+        <button *ngIf="location.idLoueur != userId"
+                routerLink="/chat/{{location.id}}">Contacter
+        </button>
         <button *ngIf="location.idLoueur == userId"
                 [disabled]="true"
                 class="btn-louer">Louer
