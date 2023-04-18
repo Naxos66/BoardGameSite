@@ -82,7 +82,7 @@ const routes: Routes = [
     canActivate: [AuthGuard]
   },
   {
-    path: 'discussion/:idLoueur/:idJeu/:idClient',
+    path: 'discussion/:idClient/:idJeu/:idLoueur',
     component: DiscussionComponent,
     canActivate: [AuthGuard]
   },

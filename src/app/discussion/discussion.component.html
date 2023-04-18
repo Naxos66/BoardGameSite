@@ -4,30 +4,29 @@
       <div class="col-md-6">
         <div class="card">
           <div class="card-header" class="message-title">
-            Messages : 
+            Messages :
           </div>
           <div class="card-body">
             <ul>
-                <li *ngFor="let message of messagess" class="message-item">
-                  <strong>{{ message.author }}:</strong> {{ message.content }}
+                <li *ngFor="let message of messages" class="message-item">
+                  <strong *ngIf="message.idSend == userId">Moi:</strong> {{ message.Message }}
+                  <strong *ngIf="message.idSend != userId">Lui:</strong> {{ message.Message }}
                 </li>
-              </ul>              
+              </ul>
           </div>
-          <div class="card-footer">
-            <form (ngSubmit)="envoyerMessage()">
-              <div class="input-group">
-                <input type="text" class="form-control" [(ngModel)]="message">
-                <div class="input-group-append">
-                    <button type="button" class="btn btn-primary" (click)="envoyerMessage()">Envoyer</button><br><br>
+          <div class="container">
+            <div class="card-footer">
+              <form (ngSubmit)="envoyerMessage()">
+                <div class="input-group">
+                  <input type="text" class="form-control" [(ngModel)]="message" [ngModelOptions]="{standalone: true}">
+                  <div class="input-group-append">
+                    <button type="button" class="btn btn-primary" (click)="envoyerMessage()" >Envoyer</button>
+                  </div>
                 </div>
-              </div>
-              <input type="hidden" [(ngModel)]="idClient" name="idClient" [value]="idClient">
-              <input type="hidden" [(ngModel)]="idJeu" name="idJeu" [value]="idJeu">
-              <input type="hidden" [(ngModel)]="idLoueur" name="idLoueur" [value]="idLoueur">
-            </form>
+              </form>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-  

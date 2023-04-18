@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {Observable, of} from "rxjs";
-import {AngularFirestore, AngularFirestoreCollection} from "@angular/fire/compat/firestore";
+import {AngularFirestore} from "@angular/fire/compat/firestore";
 import {ActivatedRoute, Router} from "@angular/router";
-import {doc} from "@angular/fire/firestore";
 import {AngularFireAuth} from "@angular/fire/compat/auth";
 
 @Component({
@@ -26,8 +24,6 @@ ngOnInit() {
     }
     const date = new Date();
     const timestamp = date.getTime();
-    // const idLocation:any = this.route.snapshot.paramMap.get('idLocation');
-    // console.log(idLocation)
     const idLocation = this.route.snapshot.paramMap.get('id') ?? 'default';
     console.log(idLocation)
     this.db.collection('LOCATIONS').doc<any>(idLocation).valueChanges().subscribe(location => {
@@ -38,6 +34,7 @@ ngOnInit() {
         dateHeureMinuteSeconde: timestamp,
         Message: this.message,
         nomJeu: location.nom,
+        idSend: this.userId
       };
       try{
         this.db.collection('CONVERSATIONS').add(newMessage);
