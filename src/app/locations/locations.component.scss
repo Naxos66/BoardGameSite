@@ -62,6 +62,11 @@ nav button {
     width: 100%;
   }
 }
+button[disabled] {
+  opacity: 0.5; /* Change the opacity to make the button appear grayed out */
+  cursor: not-allowed; /* Change the cursor to indicate the button cannot be clicked */
+}
+
 
 .location-grid {
   grid-gap: 50px;
@@ -146,6 +151,7 @@ nav button {
             &:hover {
               background-color: #0b5ed7;
             }
+            
           }
 
           .btn-louer {
@@ -166,6 +172,7 @@ nav button {
               background-color: #ccc;
               cursor: not-allowed;
             }
+    
           }
         }
       }
