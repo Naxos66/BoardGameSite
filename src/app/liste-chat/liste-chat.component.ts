@@ -20,15 +20,16 @@ export class ListeChatComponent implements OnInit {
         this.userId = user.uid;
         console.log(this.userId)
         this.afs.collection('CONVERSATIONS', ref => ref
-          .where('idClient', '==', this.userId)
-        ).valueChanges().subscribe(conversations => {
-          this.conversations = conversations;
+            .where('idClient', '==', this.userId)
+          ).valueChanges().subscribe(conversations => {
+            this.conversations = conversations;
         });
         this.afs.collection('CONVERSATIONS', ref => ref
           .where('idLoueur', '==', this.userId)
         ).valueChanges().subscribe((conversations:any) => {
           this.conversations +=conversations;
         });
+
       }
     });
   }
