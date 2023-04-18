@@ -1,20 +1,32 @@
 <div class="container">
-    <div class="card">
-      <div class="card-header">Discussion</div>
-      <div class="card-body">
-        <div class="message-list">
-          <div *ngFor="let message of messages">{{ message }}</div>
-        </div>
-      </div>
-      <div class="card-footer">
-        <form (ngSubmit)="envoyerMessage()">
-          <div class="input-group">
-            <input type="text" class="form-control" [(ngModel)]="message" [ngModelOptions]="{standalone: true}">
-            <div class="input-group-append">
-              <button type="submit" class="btn btn-primary" [disabled]="message.trim() === ''">Envoyer</button>
-            </div>
+    <h1>Discussion</h1>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-header" class="message-title">
+            Messages : 
           </div>
-        </form>
+          <div class="card-body">
+            <ul>
+                <li *ngFor="let message of messagess" class="message-item">
+                  <strong>{{ message.author }}:</strong> {{ message.content }}
+                </li>
+              </ul>              
+          </div>
+          <div class="card-footer">
+            <form (ngSubmit)="envoyerMessage()">
+              <div class="input-group">
+                <input type="text" class="form-control" [(ngModel)]="message">
+                <div class="input-group-append">
+                    <button type="button" class="btn btn-primary" (click)="envoyerMessage()">Envoyer</button><br><br>
+                </div>
+              </div>
+              <input type="hidden" [(ngModel)]="idClient" name="idClient" [value]="idClient">
+              <input type="hidden" [(ngModel)]="idJeu" name="idJeu" [value]="idJeu">
+              <input type="hidden" [(ngModel)]="idLoueur" name="idLoueur" [value]="idLoueur">
+            </form>
+          </div>
+        </div>
       </div>
     </div>
   </div>
