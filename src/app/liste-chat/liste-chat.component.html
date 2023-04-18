@@ -12,7 +12,7 @@
     <td>{{conversation.nomJeu}}</td>
     <td *ngIf="conversation.idClient == userId ">Client</td>
     <td *ngIf="conversation.idLoueur == userId ">Loueur</td>
-    <td><button  class="btn btn-primary"  routerLink="/discussion/{{conversation.idClient}}">Accéder</button></td>
+    <td><button  class="btn btn-primary"  routerLink="/discussion/{{conversation.idClient}}&{{conversation.idLoueur}}&{{conversation.idJeu}}">Accéder</button></td>
   </tr>
   </tbody>
 </table>
