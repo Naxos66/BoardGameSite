@@ -7,11 +7,9 @@
             Messages :
           </div>
           <div class="card-body">
-            <ul>
-                <li *ngFor="let message of messages" class="message-item">
-                  <strong *ngIf="message.idSend == userId">Moi:</strong> {{ message.Message }}
-                  <strong *ngIf="message.idSend != userId">Lui:</strong> {{ message.Message }}
-                </li>
+            <ul *ngFor="let message of messages ; trackBy:trackById">
+                <li *ngIf="userId==message.idSend" class="message-item"><strong>Moi : </strong>{{ message.Message }}</li>
+                <li *ngIf="userId!=message.idSend" class="message-item"><strong>Lui : </strong>{{ message.Message }}</li>
               </ul>
           </div>
           <div class="container">

@@ -47,12 +47,15 @@ export class DiscussionComponent implements OnInit {
     console.log('idJeu', this.idJeu);
     console.log('idLoueur', this.idLoueur);
     this.afs.collection('CONVERSATIONS', ref => ref
-      .where('idClient', '==', this.idClient).where('idLoueur', '==', this.idLoueur).where('idJeu', '==', this.idJeu)
-    ).valueChanges().subscribe(conversations => {
+      .where('idClient', '==', this.idClient).where('idLoueur', '==', this.idLoueur).where('idJeu', '==', this.idJeu).orderBy('dateHeureMinuteSeconde',"asc")
+    ).valueChanges({idField: 'id'}).subscribe(conversations => {
       this.messages = conversations;
     });
   }
 
+trackById(index:number, message:any){
+    return message.id
+}
 
   envoyerMessage(): void {
     if (!this.message) {
@@ -60,7 +63,7 @@ export class DiscussionComponent implements OnInit {
     }
     const date = new Date();
     const timestamp = date.getTime();
-    this.db.collection('LOCATIONS').doc<any>(this.idJeu).valueChanges().subscribe(location => {
+    this.db.collection('LOCATIONS').doc<any>(this.idJeu).valueChanges({idField: 'id'}).subscribe(location => {
       const newMessage = {
         idJeu: this.idJeu,
         idClient: this.idClient,
