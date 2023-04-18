@@ -1,1 +1,21 @@
-<button type="button" class="btn btn-primary" routerLink="/liste-chats">Retour</button>
+<div class="container">
+    <div class="card">
+      <div class="card-header">Discussion</div>
+      <div class="card-body">
+        <div class="message-list">
+          <div *ngFor="let message of messages">{{ message }}</div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <form (ngSubmit)="envoyerMessage()">
+          <div class="input-group">
+            <input type="text" class="form-control" [(ngModel)]="message" [ngModelOptions]="{standalone: true}">
+            <div class="input-group-append">
+              <button type="submit" class="btn btn-primary" [disabled]="message.trim() === ''">Envoyer</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  
