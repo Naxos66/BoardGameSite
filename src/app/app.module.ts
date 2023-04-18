@@ -24,6 +24,7 @@ import { ModifierLocationComponent } from './modifier-location/modifier-location
 import { LocationsAllComponent } from './locations-all/locations-all.component';
 import { ListeChatComponent } from './liste-chat/liste-chat.component';
 import { ChatComponent } from './chat/chat.component';
+import { DiscussionComponent } from './discussion/discussion.component';
 
 
 class PayloadDummy extends NbAuthSimpleToken {
@@ -41,7 +42,8 @@ class PayloadDummy extends NbAuthSimpleToken {
     ModifierLocationComponent,
     LocationsAllComponent,
     ListeChatComponent,
-    ChatComponent
+    ChatComponent,
+    DiscussionComponent
   ],
   imports: [
     BrowserModule,
