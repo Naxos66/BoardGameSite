@@ -76,6 +76,7 @@ trackById(index:number, message:any){
       try {
         this.db.collection('CONVERSATIONS').add(newMessage);
         this.message = '';
+        this.ngOnInit()
       } catch (e) {
         console.log("erreur")
       }
