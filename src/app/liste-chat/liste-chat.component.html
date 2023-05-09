@@ -8,7 +8,7 @@
   </tr>
   </thead>
   <tbody>
-  <tr *ngFor="let conversation of conversations" [ngClass]="{'gris': conversation.idClient == userId || conversation.idLoueur == userId}">
+  <tr *ngFor="let conversation of conversationsTri" [ngClass]="{'gris': conversation.idClient == userId || conversation.idLoueur == userId}">
     <td>{{conversation.nomJeu}}</td>
     <td *ngIf="conversation.idClient == userId ">Client</td>
     <td *ngIf="conversation.idLoueur == userId ">Loueur</td>

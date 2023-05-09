@@ -20,7 +20,6 @@ export class ListeChatComponent implements OnInit {
       if (user) {
         this.userId = user.uid;
         console.log(this.userId)
-
         this.afs.collection('CONVERSATIONS', ref => ref
             .where('idClient', '==', this.userId)
           ).valueChanges().subscribe(conversations => {
@@ -31,10 +30,9 @@ export class ListeChatComponent implements OnInit {
         ).valueChanges().subscribe(conversations => {
           this.conversations.push(...conversations);
           this.conversations.forEach(conversation => {
-            // if(this.conversationsTri.find(conversation.idJeu) == -1){
-            //   this.conversationsTri.push(...conversation)
-            // }
-            console.log(conversation)
+            if (!this.conversationsTri.find(c => c.idJeu === conversation.idJeu)) {
+              this.conversationsTri.push(conversation);
+            }
           });
         });
 
