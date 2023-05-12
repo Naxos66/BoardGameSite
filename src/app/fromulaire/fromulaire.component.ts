@@ -17,6 +17,7 @@ export class FromulaireComponent {
     this.formulaire = new FormGroup({
       nom: new FormControl('', Validators.required),
       description: new FormControl('', Validators.required),
+      localisation: new FormControl('', Validators.required),
       prix: new FormControl('', Validators.required),
       photo: new FormControl('', Validators.required),
       idLoueur: new FormControl('')
@@ -30,6 +31,7 @@ export class FromulaireComponent {
           const location = {
             nom: this.formulaire.value.nom,
             description: this.formulaire.value.description,
+            localisation: this.formulaire.value.localisation,
             photo: this.formulaire.value.photo,
             disponible: true,
             prix: this.formulaire.value.prix,

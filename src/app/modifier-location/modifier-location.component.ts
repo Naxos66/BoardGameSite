@@ -33,6 +33,7 @@ export class ModifierLocationComponent implements OnInit {
     this.locationForm = this.fb.group({
       nom: ['', Validators.required],
       description: ['', Validators.required],
+      localisation: ['', Validators.required],
       prix: ['', Validators.required],
       photo: ['', Validators.required],
     });

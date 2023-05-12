@@ -8,6 +8,7 @@ import { User } from 'firebase/auth';
 interface Location {
   prix: string;
   nom: string;
+  localisation:string;
   description: string;
   disponible: boolean;
   photo: string;

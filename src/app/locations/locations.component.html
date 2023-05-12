@@ -24,6 +24,7 @@
       <div class="details">
         <h3>{{location.nom}}</h3>
         <h5>{{location.description}}</h5>
+        <h5>{{location.localisation}}</h5>
         <h5>{{location.prix}}  €/jour</h5>
         <h5 *ngIf="location.disponible" style="color:#00c500">Disponible</h5>
         <h5 *ngIf="!location.disponible" style="color:red">Non Disponible</h5>
