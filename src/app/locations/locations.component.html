@@ -15,11 +15,28 @@
   <button onclick="window.location='/liste-chats/'">Boîte de reception</button>
   <button class="logout" onclick="window.location='/login/'">Déconnexion</button>
 </nav>
+<nav>
+  <button style="background-color:palevioletred" *ngIf="isAdmin" onclick="window.location='/locationsAllAdmin'">Toutes les annonces</button>
+  <button style="background-color:palevioletred" *ngIf="isAdmin" onclick="window.location='/locationsEnCoursAdmin'">Les locations en cours</button>
+  <button style="background-color:palevioletred" *ngIf="isAdmin" onclick="window.location='/listeAdmin'">Gestion admins</button>
+</nav>
 
 <div>
   <br><br>
+  <div style="text-align: center;margin-bottom: 15px">
+    <input class="search-bar" type="text" [(ngModel)]="searchQuery" placeholder="Rechercher..." (input)="filterLocations()" />
+    <div class="spacer"></div>
+    <select class="sort-selector" [(ngModel)]="sortOption" (change)="sortLocations()">
+      <option value="">Trier par</option>
+      <option value="az">A-Z</option>
+      <option value="za">Z-A</option>
+      <option value="price_asc">Prix croissant</option>
+      <option value="price_desc">Prix décroissant</option>
+    </select>
+  </div>
+
   <div class="location-grid">
-    <div *ngFor="let location of locations | async " class="location-card">
+    <div *ngFor="let location of filteredLocations" class="location-card">
       <img [src]="location.photo">
       <div class="details">
         <h3>{{location.nom}}</h3>
@@ -42,10 +59,9 @@
         <button *ngIf="location.idLoueur != userId"
                 [disabled]="!location.disponible"
                 class="btn-louer"
-                (click)="louerLocation(location.id, location.idLoueur, location.nom)">
+                (click)="louerLocation(location.id, location.idLoueur, location.nom, location.prix)">
           Louer
         </button>
-
       </div>
     </div>
   </div>

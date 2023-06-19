@@ -1,0 +1,33 @@
+<button type="button" class="btn btn-primary" routerLink="/locations">Retour</button>
+<div>
+<table class="table" style="color:white">
+  <thead>
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">Titre</th>
+    <th scope="col">Statut</th>
+    <th scope="col">ID_Loueur</th>
+    <th scope="col">Action</th>
+  </tr>
+  </thead>
+  <tbody>
+  <ng-container *ngIf="locationsAll && locationsAll.length > 0; else noLocations">
+    <tr *ngFor="let location of locationsAll; let i = index">
+      <th scope="row">{{ i + 1 }}</th>
+      <td>{{ location.nom }}</td>
+      <td>{{ location.disponible ? 'Disponible' : 'Non disponible' }}</td>
+      <td>{{ location.idLoueur }}</td>
+      <td>
+        <a routerLink="/modifierLocation/{{ location.id}}" class="btn btn-primary">Modifier</a>
+        <button type="button" class="btn btn-danger" (click)="deleteLocation(location.id)">Supprimer</button>
+      </td>
+    </tr>
+  </ng-container>
+  <ng-template #noLocations>
+    <tr>
+      <td colspan="4">Il n'y a pas d'annonce(s) en ligne.</td>
+    </tr>
+  </ng-template>
+  </tbody>
+</table>
+</div>

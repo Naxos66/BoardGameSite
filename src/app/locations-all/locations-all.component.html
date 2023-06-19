@@ -6,6 +6,7 @@
     <th scope="col">#</th>
     <th scope="col">Titre</th>
     <th scope="col">Statut</th>
+    <th scope="col">Prix</th>
     <th scope="col">Action</th>
   </tr>
   </thead>
@@ -15,6 +16,7 @@
       <th scope="row">{{ i + 1 }}</th>
       <td>{{ locationLouee.jeuName }}</td>
       <td>Location en cours</td>
+      <td>{{locationLouee.prix }} €/jour</td>
       <td>
         <button type="button" class="btn btn-primary" (click)="validerLocation(locationLouee.id_jeu,locationLouee.id)">Retourner
         </button>
@@ -35,6 +37,7 @@
     <th scope="col">#</th>
     <th scope="col">Titre</th>
     <th scope="col">Statut</th>
+    <th scope="col">Prix</th>
     <th scope="col">Action</th>
   </tr>
   </thead>
@@ -44,6 +47,7 @@
       <th scope="row">{{ i + 1 }}</th>
       <td>{{ locationLouee.jeuName }}</td>
       <td>Location en cours</td>
+      <td>{{locationLouee.prix}} €/jour</td>
       <td>
         <button type="button" class="btn btn-primary" (click)="validerLocation(locationLouee.id_jeu,locationLouee.id)">Retourner</button>
       </td>

@@ -18,6 +18,12 @@ import {LocationsAllComponent} from "./locations-all/locations-all.component";
 import {ListeChatComponent} from "./liste-chat/liste-chat.component";
 import {ChatComponent} from "./chat/chat.component";
 import {DiscussionComponent} from "./discussion/discussion.component";
+import {ListLocationsAdminComponent} from "./list-locations-admin/list-locations-admin.component";
+import {
+  ListLocationsEncoursAdminComponent
+} from "./list-locations-encours-admin/list-locations-encours-admin.component";
+import {ListeAdminComponent} from "./liste-admin/liste-admin.component";
+import {AddAdminComponent} from "./add-admin/add-admin.component";
 
 
 const routes: Routes = [
@@ -72,10 +78,35 @@ const routes: Routes = [
     canActivate: [AuthGuard]
   },
   {
+    path: 'locationsAllAdmin',
+    component: ListLocationsAdminComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'locationsEnCoursAdmin',
+    component: ListLocationsEncoursAdminComponent,
+    canActivate: [AuthGuard]
+  },
+  {
     path: 'liste-chats',
     component: ListeChatComponent,
     canActivate: [AuthGuard]
   },
+  {
+    path: 'listeAdmin',
+    component: ListeAdminComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'addAdmin',
+    component: AddAdminComponent,
+    canActivate: [AuthGuard]
+  },
+  // {
+  //   path: 'liste-chats-admin',
+  //   component: ListChatAdminComponent,
+  //   canActivate: [AuthGuard]
+  // },
   {
     path: 'chat/:id',
     component: ChatComponent,

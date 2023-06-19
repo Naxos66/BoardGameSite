@@ -1,0 +1,37 @@
+<button type="button" class="btn btn-primary" routerLink="/locations">Retour</button>
+<div>
+<h1>Toutes les locations en cours :</h1>
+<table class="table" style="color:white">
+  <thead>
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">Titre</th>
+    <th scope="col">Statut</th>
+    <th scope="col">Id_Loueur</th>
+    <th scope="col">Id_Locataire</th>
+    <th scope="col">Prix</th>
+    <th scope="col">Action</th>
+  </tr>
+  </thead>
+  <tbody>
+  <ng-container *ngIf="AllLocations && AllLocations.length > 0; else noLocationsLouees">
+    <tr *ngFor="let locationLouee of AllLocations; let i = index">
+      <th scope="row">{{ i + 1 }}</th>
+      <td>{{ locationLouee.jeuName }}</td>
+      <td>Location en cours</td>
+      <td>{{locationLouee.id_loueur}}</td>
+      <td>{{locationLouee.id_locataire}}</td>
+      <td>{{locationLouee.prix}} €/jour</td>
+      <td>
+        <button type="button" class="btn btn-primary" (click)="validerLocation(locationLouee.id_jeu,locationLouee.id)">Retourner</button>
+      </td>
+    </tr>
+  </ng-container>
+  <ng-template #noLocationsLouees>
+    <tr>
+      <td colspan="4">Vous n'avez loué aucun jeu pour le moment.</td>
+    </tr>
+  </ng-template>
+  </tbody>
+</table>
+</div>

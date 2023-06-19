@@ -25,6 +25,11 @@ import { LocationsAllComponent } from './locations-all/locations-all.component';
 import { ListeChatComponent } from './liste-chat/liste-chat.component';
 import { ChatComponent } from './chat/chat.component';
 import { DiscussionComponent } from './discussion/discussion.component';
+import { ListLocationsAdminComponent } from './list-locations-admin/list-locations-admin.component';
+import { ListLocationsEncoursAdminComponent } from './list-locations-encours-admin/list-locations-encours-admin.component';
+import { ListeAdminComponent } from './liste-admin/liste-admin.component';
+import { AddAdminComponent } from './add-admin/add-admin.component';
+
 
 
 class PayloadDummy extends NbAuthSimpleToken {
@@ -43,7 +48,11 @@ class PayloadDummy extends NbAuthSimpleToken {
     LocationsAllComponent,
     ListeChatComponent,
     ChatComponent,
-    DiscussionComponent
+    DiscussionComponent,
+    ListLocationsAdminComponent,
+    ListLocationsEncoursAdminComponent,
+    ListeAdminComponent,
+    AddAdminComponent
   ],
   imports: [
     BrowserModule,

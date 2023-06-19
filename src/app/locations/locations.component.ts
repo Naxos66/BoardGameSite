@@ -1,22 +1,17 @@
-import {AngularFirestore, AngularFirestoreCollection} from '@angular/fire/compat/firestore';
-import {Component, OnInit} from '@angular/core';
-import {async, identity, Observable} from 'rxjs';
+import { Component, OnInit } from '@angular/core';
+import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/compat/firestore';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
-import { User } from 'firebase/auth';
-
+import { take } from 'rxjs/operators';
 
 interface Location {
   prix: string;
   nom: string;
-  localisation:string;
+  localisation: string;
   description: string;
   disponible: boolean;
   photo: string;
-  id:string
-  idLoueur:string
-}
-interface LocationLouee {
-
+  id: string;
+  idLoueur: string;
 }
 
 @Component({
@@ -24,30 +19,95 @@ interface LocationLouee {
   templateUrl: './locations.component.html',
   styleUrls: ['./locations.component.scss']
 })
-export class LocationsComponent implements OnInit{
+export class LocationsComponent implements OnInit {
 
-  userId!: string ;
+  userId!: string;
+  isAdminList: any[] = [];
+  isAdmin: boolean = false;
   locationsCollection: AngularFirestoreCollection<Location>;
-  locations!: Observable<Location[]>;
+  locations: Location[] = [];
+  filteredLocations: Location[] = [];
+  searchQuery: string = '';
+  sortOption: string = '';
 
-
-  constructor(private afs: AngularFirestore,private auth: AngularFireAuth) {
+  constructor(private afs: AngularFirestore, private auth: AngularFireAuth) {
     this.locationsCollection = afs.collection<Location>('LOCATIONS');
-    this.locations = this.locationsCollection.valueChanges({idField: 'id'})
-  }
-  ngOnInit() {
-    this.auth.authState.subscribe(user => {if (user) {this.userId= user.uid;}})
   }
 
-  louerLocation(locationId: string, loueurId:string, jeuName:string) {
-    const user = this.auth.authState.subscribe(user => {
-      if (user) {
-        const louerDoc = this.afs.collection('LOUER').doc();
-        louerDoc.set({id_locataire: user.uid, id_jeu: locationId, id_loueur: loueurId, jeuName: jeuName});
-        const locationDoc = this.locationsCollection.doc(locationId);
-        locationDoc.update({disponible: false});
-      }
-    })
+  async ngOnInit() {
+    const id = await this.returnIdUser();
+    await this.checkIdExists(id);
+    this.verifIsAdmin();
+    this.loadLocations();
+  }
+
+  async louerLocation(locationId: string, loueurId: string, jeuName: string, prix: string) {
+    const user = await this.auth.authState.pipe(take(1)).toPromise();
+    if (user) {
+      const louerDoc = this.afs.collection('LOUER').doc();
+      louerDoc.set({ id_locataire: user.uid, id_jeu: locationId, id_loueur: loueurId, jeuName: jeuName, prix: prix });
+      const locationDoc = this.locationsCollection.doc(locationId);
+      locationDoc.update({ disponible: false });
+    }
+  }
+
+  async returnIdUser() {
+    const user = await this.auth.authState.pipe(take(1)).toPromise();
+    if (user) {
+      return user.uid;
+    }
+    return '';
+  }
+
+  async checkIdExists(id: string) {
+    const querySnapshot = await this.afs.collection('USERS', ref => ref.where('idUser', '==', id)).get().toPromise();
+    if (querySnapshot) {
+      this.isAdminList = querySnapshot.docs.map(doc => doc.data());
+    } else {
+      this.isAdminList = [];
+    }
+  }
+
+  verifIsAdmin() {
+    this.isAdmin = this.isAdminList.length > 0;
+  }
+
+  loadLocations() {
+    this.locationsCollection.valueChanges({ idField: 'id' }).subscribe(locations => {
+      this.locations = locations;
+      this.filterLocations();
+      this.sortLocations();
+    });
+  }
+
+  filterLocations() {
+    this.filteredLocations = this.locations.filter(location => {
+      const query = this.searchQuery.toLowerCase();
+      return location.nom.toLowerCase().includes(query)
+        || location.localisation.toLowerCase().includes(query)
+        || location.description.toLowerCase().includes(query);
+    });
+    this.sortLocations();
+  }
+
+  sortLocations() {
+    switch (this.sortOption) {
+      case 'az':
+        this.filteredLocations.sort((a, b) => a.nom.localeCompare(b.nom));
+        break;
+      case 'za':
+        this.filteredLocations.sort((a, b) => b.nom.localeCompare(a.nom));
+        break;
+      case 'price_asc':
+        this.filteredLocations.sort((a, b) => +a.prix - +b.prix);
+        break;
+      case 'price_desc':
+        this.filteredLocations.sort((a, b) => +b.prix - +a.prix);
+        break;
+      default:
+        // Pas de tri
+        break;
+    }
   }
 
 }

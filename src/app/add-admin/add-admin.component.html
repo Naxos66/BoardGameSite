@@ -1,0 +1,14 @@
+<button type="button" class="btn btn-primary" (click)="goBack()">Retour</button><br><br>
+<div class="container">
+  <div class="card-footer">
+    <form (ngSubmit)="addAdmin()">
+      <div class="input-group">
+        <input type="text" class="form-control" [(ngModel)]="idUser" [ngModelOptions]="{standalone: true}">
+        <div class="input-group-append">
+          <button type="button" class="btn btn-primary" (click)="addAdmin()">Ajouter</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+

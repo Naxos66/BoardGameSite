@@ -1,0 +1,22 @@
+<button type="button" class="btn btn-primary" routerLink="/locations">Retour</button><br><br>
+<button class="btn btn-primary"  routerLink="/addAdmin">Ajouter un administrateur</button>
+<table class="table" style="color:white" >
+  <thead>
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">Id</th>
+    <th scope="col">Action</th>
+  </tr>
+  </thead>
+  <tbody>
+  <ng-container *ngIf="admins && admins.length > 0">
+    <tr *ngFor="let admin of admins; let i = index">
+      <th scope="row">{{ i + 1 }}</th>
+      <td>{{ admin.idUser}}</td>
+      <td>
+        <button type="button" class="btn btn-danger" (click)="deleteAdmin(admin.id)">Supprimer</button>
+      </td>
+    </tr>
+  </ng-container>
+  </tbody>
+</table>
