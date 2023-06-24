@@ -27,99 +27,101 @@ import {AddAdminComponent} from "./add-admin/add-admin.component";
 
 
 const routes: Routes = [
+  // Routes pour l'authentification avec Nebular
+  {
+    path: '',
+    component: NbLoginComponent
+  },
+  {
+    path: 'login',
+    component: NbLoginComponent,
+  },
+  {
+    path: 'register',
+    component: NbRegisterComponent,
+  },
+  {
+    path: 'logout',
+    component: NbLogoutComponent,
+  },
+  {
+    path: 'request-password',
+    component: NbRequestPasswordComponent,
+  },
+  {
+    path: 'reset-password',
+    component: NbResetPasswordComponent,
+  },
 
-    {
-      path: '',
-      component: NbLoginComponent
-    },
-    {
-      path: 'login',
-      component: NbLoginComponent,
-    },
-    {
-      path: 'register',
-      component: NbRegisterComponent,
-    },
-    {
-      path: 'logout',
-      component: NbLogoutComponent,
-    },
-    {
-      path: 'request-password',
-      component: NbRequestPasswordComponent,
-    },
-    {
-      path: 'reset-password',
-      component: NbResetPasswordComponent,
-    },
-    {
-      path: 'locations',
-      component: LocationsComponent,
-      canActivate: [AuthGuard]
-    },
+  // Routes pour les fonctionnalités de l'application
+  {
+    path: 'locations',
+    component: LocationsComponent,
+    canActivate: [AuthGuard] // Route protégée par le garde de navigation AuthGuard
+  },
   {
     path: 'addLocation',
     component: FromulaireComponent,
-    canActivate: [AuthGuard]
+    canActivate: [AuthGuard] // Route protégée par le garde de navigation AuthGuard
   },
   {
     path: 'allMyLocations',
     component: ListeLocationsComponent,
-    canActivate: [AuthGuard]
+    canActivate: [AuthGuard] // Route protégée par le garde de navigation AuthGuard
   },
   {
     path: 'modifierLocation/:id',
     component: ModifierLocationComponent,
-    canActivate: [AuthGuard]
+    canActivate: [AuthGuard] // Route protégée par le garde de navigation AuthGuard
   },
   {
     path: 'locationsAll',
     component: LocationsAllComponent,
-    canActivate: [AuthGuard]
+    canActivate: [AuthGuard] // Route protégée par le garde de navigation AuthGuard
   },
   {
     path: 'locationsAllAdmin',
     component: ListLocationsAdminComponent,
-    canActivate: [AuthGuard]
+    canActivate: [AuthGuard] // Route protégée par le garde de navigation AuthGuard
   },
   {
     path: 'locationsEnCoursAdmin',
     component: ListLocationsEncoursAdminComponent,
-    canActivate: [AuthGuard]
+    canActivate: [AuthGuard] // Route protégée par le garde de navigation AuthGuard
   },
   {
     path: 'liste-chats',
     component: ListeChatComponent,
-    canActivate: [AuthGuard]
+    canActivate: [AuthGuard] // Route protégée par le garde de navigation AuthGuard
   },
   {
     path: 'listeAdmin',
     component: ListeAdminComponent,
-    canActivate: [AuthGuard]
+    canActivate: [AuthGuard] // Route protégée par le garde de navigation AuthGuard
   },
   {
     path: 'addAdmin',
     component: AddAdminComponent,
-    canActivate: [AuthGuard]
+    canActivate: [AuthGuard] // Route protégée par le garde de navigation AuthGuard
   },
   // {
   //   path: 'liste-chats-admin',
   //   component: ListChatAdminComponent,
-  //   canActivate: [AuthGuard]
+  //   canActivate: [AuthGuard] // Route protégée par le garde de navigation AuthGuard
   // },
   {
     path: 'chat/:id',
     component: ChatComponent,
-    canActivate: [AuthGuard]
+    canActivate: [AuthGuard] // Route protégée par le garde de navigation AuthGuard
   },
   {
     path: 'discussion/:idClient/:idJeu/:idLoueur',
     component: DiscussionComponent,
-    canActivate: [AuthGuard]
+    canActivate: [AuthGuard] // Route protégée par le garde de navigation AuthGuard
   },
   {
     path: '**',
-    redirectTo: 'login'
+    redirectTo: 'login' // Redirection vers la page de connexion pour toutes les autres routes non définies
   }
 ];
 

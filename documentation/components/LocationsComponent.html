@@ -1,0 +1,1487 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>board-game-site documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top d-block d-sm-none">
+            <a href="../" class="navbar-brand">board-game-site documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  LocationsComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#styleData" class="nav-link"
+                role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/locations/locations.component.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code>OnInit</code>
+    </p>
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-locations</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./locations.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./locations.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#filteredLocations" >filteredLocations</a>
+                            </li>
+                            <li>
+                                <a href="#isAdmin" >isAdmin</a>
+                            </li>
+                            <li>
+                                <a href="#isAdminList" >isAdminList</a>
+                            </li>
+                            <li>
+                                <a href="#locations" >locations</a>
+                            </li>
+                            <li>
+                                <a href="#locationsCollection" >locationsCollection</a>
+                            </li>
+                            <li>
+                                <a href="#searchQuery" >searchQuery</a>
+                            </li>
+                            <li>
+                                <a href="#sortOption" >sortOption</a>
+                            </li>
+                            <li>
+                                <a href="#userId" >userId</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#checkIdExists" >checkIdExists</a>
+                            </li>
+                            <li>
+                                <a href="#filterLocations" >filterLocations</a>
+                            </li>
+                            <li>
+                                <a href="#loadLocations" >loadLocations</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#louerLocation" >louerLocation</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#returnIdUser" >returnIdUser</a>
+                            </li>
+                            <li>
+                                <a href="#sortLocations" >sortLocations</a>
+                            </li>
+                            <li>
+                                <a href="#verifIsAdmin" >verifIsAdmin</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(afs: AngularFirestore, auth: AngularFireAuth)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/locations/locations.component.ts:31</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>afs</td>
+                                                  
+                                                        <td>
+                                                                    <code>AngularFirestore</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>auth</td>
+                                                  
+                                                        <td>
+                                                                    <code>AngularFireAuth</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="checkIdExists"></a>
+                    <span class="name">
+                        <span class="modifier">Async</span>
+                        <span ><b>checkIdExists</b></span>
+                        <a href="#checkIdExists"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>checkIdExists(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="62"
+                            class="link-to-prism">src/app/locations/locations.component.ts:62</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>id</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="filterLocations"></a>
+                    <span class="name">
+                        <span ><b>filterLocations</b></span>
+                        <a href="#filterLocations"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>filterLocations()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="83"
+                            class="link-to-prism">src/app/locations/locations.component.ts:83</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="loadLocations"></a>
+                    <span class="name">
+                        <span ><b>loadLocations</b></span>
+                        <a href="#loadLocations"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>loadLocations()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="75"
+                            class="link-to-prism">src/app/locations/locations.component.ts:75</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="louerLocation"></a>
+                    <span class="name">
+                        <span class="modifier">Async</span>
+                        <span ><b>louerLocation</b></span>
+                        <a href="#louerLocation"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>louerLocation(locationId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, loueurId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, jeuName: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, prix: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="44"
+                            class="link-to-prism">src/app/locations/locations.component.ts:44</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>locationId</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>loueurId</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>jeuName</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>prix</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span class="modifier">Async</span>
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="37"
+                            class="link-to-prism">src/app/locations/locations.component.ts:37</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="returnIdUser"></a>
+                    <span class="name">
+                        <span class="modifier">Async</span>
+                        <span ><b>returnIdUser</b></span>
+                        <a href="#returnIdUser"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>returnIdUser()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="54"
+                            class="link-to-prism">src/app/locations/locations.component.ts:54</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>unknown</code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="sortLocations"></a>
+                    <span class="name">
+                        <span ><b>sortLocations</b></span>
+                        <a href="#sortLocations"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>sortLocations()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="95"
+                            class="link-to-prism">src/app/locations/locations.component.ts:95</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="verifIsAdmin"></a>
+                    <span class="name">
+                        <span ><b>verifIsAdmin</b></span>
+                        <a href="#verifIsAdmin"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>verifIsAdmin()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="71"
+                            class="link-to-prism">src/app/locations/locations.component.ts:71</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="filteredLocations"></a>
+                    <span class="name">
+                        <span ><b>filteredLocations</b></span>
+                        <a href="#filteredLocations"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/Location.html" target="_self" >Location[]</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/app/locations/locations.component.ts:29</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isAdmin"></a>
+                    <span class="name">
+                        <span ><b>isAdmin</b></span>
+                        <a href="#isAdmin"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/locations/locations.component.ts:26</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isAdminList"></a>
+                    <span class="name">
+                        <span ><b>isAdminList</b></span>
+                        <a href="#isAdminList"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>any[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/locations/locations.component.ts:25</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="locations"></a>
+                    <span class="name">
+                        <span ><b>locations</b></span>
+                        <a href="#locations"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/Location.html" target="_self" >Location[]</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/locations/locations.component.ts:28</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="locationsCollection"></a>
+                    <span class="name">
+                        <span ><b>locationsCollection</b></span>
+                        <a href="#locationsCollection"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/Location.html" target="_self" >AngularFirestoreCollection&lt;Location&gt;</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/locations/locations.component.ts:27</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="searchQuery"></a>
+                    <span class="name">
+                        <span ><b>searchQuery</b></span>
+                        <a href="#searchQuery"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/app/locations/locations.component.ts:30</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="sortOption"></a>
+                    <span class="name">
+                        <span ><b>sortOption</b></span>
+                        <a href="#sortOption"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/locations/locations.component.ts:31</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="userId"></a>
+                    <span class="name">
+                        <span ><b>userId</b></span>
+                        <a href="#userId"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/locations/locations.component.ts:24</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+import { AngularFirestore, AngularFirestoreCollection } from &#x27;@angular/fire/compat/firestore&#x27;; // Import du service AngularFirestore et AngularFirestoreCollection
+import { AngularFireAuth } from &#x27;@angular/fire/compat/auth&#x27;; // Import du service AngularFireAuth
+import { take } from &#x27;rxjs/operators&#x27;; // Import de l&#x27;opérateur take pour limiter le nombre d&#x27;éléments émis
+
+interface Location {
+  prix: string;
+  nom: string;
+  localisation: string;
+  description: string;
+  disponible: boolean;
+  photo: string;
+  id: string;
+  idLoueur: string;
+}
+
+@Component({
+  selector: &#x27;app-locations&#x27;,
+  templateUrl: &#x27;./locations.component.html&#x27;,
+  styleUrls: [&#x27;./locations.component.scss&#x27;]
+})
+export class LocationsComponent implements OnInit {
+
+  userId!: string; // Variable pour stocker l&#x27;ID de l&#x27;utilisateur connecté
+  isAdminList: any[] &#x3D; []; // Tableau pour stocker la liste des administrateurs
+  isAdmin: boolean &#x3D; false; // Variable pour vérifier si l&#x27;utilisateur est un administrateur
+  locationsCollection: AngularFirestoreCollection&lt;Location&gt;; // Collection Firestore pour les locations
+  locations: Location[] &#x3D; []; // Tableau pour stocker toutes les locations
+  filteredLocations: Location[] &#x3D; []; // Tableau pour stocker les locations filtrées
+  searchQuery: string &#x3D; &#x27;&#x27;; // Variable pour stocker la requête de recherche
+  sortOption: string &#x3D; &#x27;&#x27;; // Variable pour stocker l&#x27;option de tri
+
+  constructor(private afs: AngularFirestore, private auth: AngularFireAuth) {
+    this.locationsCollection &#x3D; afs.collection&lt;Location&gt;(&#x27;LOCATIONS&#x27;); // Collection Firestore pour la collection &#x27;LOCATIONS&#x27;
+  }
+
+  async ngOnInit() {
+    const id &#x3D; await this.returnIdUser(); // Récupération de l&#x27;ID de l&#x27;utilisateur connecté
+    await this.checkIdExists(id); // Vérification si l&#x27;ID existe dans la collection &#x27;USERS&#x27;
+    this.verifIsAdmin(); // Vérification si l&#x27;utilisateur est un administrateur
+    this.loadLocations(); // Chargement des locations
+  }
+
+  async louerLocation(locationId: string, loueurId: string, jeuName: string, prix: string) {
+    const user &#x3D; await this.auth.authState.pipe(take(1)).toPromise(); // Récupération de l&#x27;utilisateur connecté
+    if (user) {
+      const louerDoc &#x3D; this.afs.collection(&#x27;LOUER&#x27;).doc(); // Référence au document &#x27;LOUER&#x27;
+      louerDoc.set({ id_locataire: user.uid, id_jeu: locationId, id_loueur: loueurId, jeuName: jeuName, prix: prix }); // Ajout de la location dans la collection &#x27;LOUER&#x27;
+      const locationDoc &#x3D; this.locationsCollection.doc(locationId); // Référence à la location dans la collection &#x27;LOCATIONS&#x27;
+      locationDoc.update({ disponible: false }); // Mise à jour de la disponibilité de la location
+    }
+  }
+
+  async returnIdUser() {
+    const user &#x3D; await this.auth.authState.pipe(take(1)).toPromise(); // Récupération de l&#x27;utilisateur connecté
+    if (user) {
+      return user.uid; // Renvoie de l&#x27;ID de l&#x27;utilisateur
+    }
+    return &#x27;&#x27;; // Renvoie une chaîne vide si l&#x27;utilisateur n&#x27;est pas connecté
+  }
+
+  async checkIdExists(id: string) {
+    const querySnapshot &#x3D; await this.afs.collection(&#x27;USERS&#x27;, ref &#x3D;&gt; ref.where(&#x27;idUser&#x27;, &#x27;&#x3D;&#x3D;&#x27;, id)).get().toPromise(); // Vérification si l&#x27;ID existe dans la collection &#x27;USERS&#x27;
+    if (querySnapshot) {
+      this.isAdminList &#x3D; querySnapshot.docs.map(doc &#x3D;&gt; doc.data()); // Récupération des données des administrateurs
+    } else {
+      this.isAdminList &#x3D; []; // Si l&#x27;ID n&#x27;existe pas, le tableau des administrateurs est vide
+    }
+  }
+
+  verifIsAdmin() {
+    this.isAdmin &#x3D; this.isAdminList.length &gt; 0; // Vérification si l&#x27;utilisateur est un administrateur
+  }
+
+  loadLocations() {
+    this.locationsCollection.valueChanges({ idField: &#x27;id&#x27; }).subscribe(locations &#x3D;&gt; {
+      this.locations &#x3D; locations; // Récupération de toutes les locations à partir de la collection &#x27;LOCATIONS&#x27;
+      this.filterLocations(); // Filtrage des locations
+      this.sortLocations(); // Tri des locations
+    });
+  }
+
+  filterLocations() {
+    this.filteredLocations &#x3D; this.locations.filter(location &#x3D;&gt; {
+      const query &#x3D; this.searchQuery.toLowerCase();
+      return (
+        location.nom.toLowerCase().includes(query) ||
+        location.localisation.toLowerCase().includes(query) ||
+        location.description.toLowerCase().includes(query)
+      );
+    });
+    this.sortLocations(); // Tri des locations après le filtrage
+  }
+
+  sortLocations() {
+    switch (this.sortOption) {
+      case &#x27;az&#x27;:
+        this.filteredLocations.sort((a, b) &#x3D;&gt; a.nom.localeCompare(b.nom)); // Tri par ordre alphabétique ascendant (A à Z)
+        break;
+      case &#x27;za&#x27;:
+        this.filteredLocations.sort((a, b) &#x3D;&gt; b.nom.localeCompare(a.nom)); // Tri par ordre alphabétique descendant (Z à A)
+        break;
+      case &#x27;price_asc&#x27;:
+        this.filteredLocations.sort((a, b) &#x3D;&gt; +a.prix - +b.prix); // Tri par prix ascendant
+        break;
+      case &#x27;price_desc&#x27;:
+        this.filteredLocations.sort((a, b) &#x3D;&gt; +b.prix - +a.prix); // Tri par prix descendant
+        break;
+      default:
+        // Pas de tri
+        break;
+    }
+  }
+
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang&#x3D;&quot;en&quot;&gt;
+&lt;head&gt;
+  &lt;meta charset&#x3D;&quot;UTF-8&quot;&gt;
+  &lt;meta http-equiv&#x3D;&quot;X-UA-Compatible&quot; content&#x3D;&quot;IE&#x3D;edge&quot;&gt;
+  &lt;meta name&#x3D;&quot;viewport&quot; content&#x3D;&quot;width&#x3D;device-width, initial-scale&#x3D;1.0&quot;&gt;
+  &lt;title&gt;LocaJeux&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;nav&gt;
+  &lt;button onclick&#x3D;&quot;window.location&#x3D;&#x27;/addLocation&#x27;&quot;&gt;Ajouter une location&lt;/button&gt;
+  &lt;button onclick&#x3D;&quot;window.location&#x3D;&#x27;/allMyLocations&#x27;&quot;&gt;Mes annonces&lt;/button&gt;
+  &lt;button onclick&#x3D;&quot;window.location&#x3D;&#x27;/locationsAll&#x27;&quot;&gt;Mes locations&lt;/button&gt;
+  &lt;button onclick&#x3D;&quot;window.location&#x3D;&#x27;/liste-chats/&#x27;&quot;&gt;Boîte de reception&lt;/button&gt;
+  &lt;button class&#x3D;&quot;logout&quot; onclick&#x3D;&quot;window.location&#x3D;&#x27;/login/&#x27;&quot;&gt;Déconnexion&lt;/button&gt;
+&lt;/nav&gt;
+&lt;nav&gt;
+  &lt;button style&#x3D;&quot;background-color:palevioletred&quot; *ngIf&#x3D;&quot;isAdmin&quot; onclick&#x3D;&quot;window.location&#x3D;&#x27;/locationsAllAdmin&#x27;&quot;&gt;Toutes les annonces&lt;/button&gt;
+  &lt;button style&#x3D;&quot;background-color:palevioletred&quot; *ngIf&#x3D;&quot;isAdmin&quot; onclick&#x3D;&quot;window.location&#x3D;&#x27;/locationsEnCoursAdmin&#x27;&quot;&gt;Les locations en cours&lt;/button&gt;
+  &lt;button style&#x3D;&quot;background-color:palevioletred&quot; *ngIf&#x3D;&quot;isAdmin&quot; onclick&#x3D;&quot;window.location&#x3D;&#x27;/listeAdmin&#x27;&quot;&gt;Gestion admins&lt;/button&gt;
+&lt;/nav&gt;
+
+&lt;div&gt;
+  &lt;br&gt;&lt;br&gt;
+  &lt;div style&#x3D;&quot;text-align: center;margin-bottom: 15px&quot;&gt;
+    &lt;input class&#x3D;&quot;search-bar&quot; type&#x3D;&quot;text&quot; [(ngModel)]&#x3D;&quot;searchQuery&quot; placeholder&#x3D;&quot;Rechercher...&quot; (input)&#x3D;&quot;filterLocations()&quot; /&gt;
+    &lt;div class&#x3D;&quot;spacer&quot;&gt;&lt;/div&gt;
+    &lt;select class&#x3D;&quot;sort-selector&quot; [(ngModel)]&#x3D;&quot;sortOption&quot; (change)&#x3D;&quot;sortLocations()&quot;&gt;
+      &lt;option value&#x3D;&quot;&quot;&gt;Trier par&lt;/option&gt;
+      &lt;option value&#x3D;&quot;az&quot;&gt;A-Z&lt;/option&gt;
+      &lt;option value&#x3D;&quot;za&quot;&gt;Z-A&lt;/option&gt;
+      &lt;option value&#x3D;&quot;price_asc&quot;&gt;Prix croissant&lt;/option&gt;
+      &lt;option value&#x3D;&quot;price_desc&quot;&gt;Prix décroissant&lt;/option&gt;
+    &lt;/select&gt;
+  &lt;/div&gt;
+
+  &lt;div class&#x3D;&quot;location-grid&quot;&gt;
+    &lt;div *ngFor&#x3D;&quot;let location of filteredLocations&quot; class&#x3D;&quot;location-card&quot;&gt;
+      &lt;img [src]&#x3D;&quot;location.photo&quot;&gt;
+      &lt;div class&#x3D;&quot;details&quot;&gt;
+        &lt;h3&gt;{{location.nom}}&lt;/h3&gt;
+        &lt;h5&gt;{{location.description}}&lt;/h5&gt;
+        &lt;h5&gt;{{location.localisation}}&lt;/h5&gt;
+        &lt;h5&gt;{{location.prix}}  €/jour&lt;/h5&gt;
+        &lt;h5 *ngIf&#x3D;&quot;location.disponible&quot; style&#x3D;&quot;color:#00c500&quot;&gt;Disponible&lt;/h5&gt;
+        &lt;h5 *ngIf&#x3D;&quot;!location.disponible&quot; style&#x3D;&quot;color:red&quot;&gt;Non Disponible&lt;/h5&gt;
+        &lt;button *ngIf&#x3D;&quot;location.idLoueur &#x3D;&#x3D; userId&quot;
+                [disabled]&#x3D;&quot;true&quot;
+                routerLink&#x3D;&quot;/chat/{{location.id}}&quot;&gt;Contacter
+        &lt;/button&gt;
+        &lt;button *ngIf&#x3D;&quot;location.idLoueur !&#x3D; userId&quot;
+                routerLink&#x3D;&quot;/chat/{{location.id}}&quot;&gt;Contacter
+        &lt;/button&gt;
+        &lt;button *ngIf&#x3D;&quot;location.idLoueur &#x3D;&#x3D; userId&quot;
+                [disabled]&#x3D;&quot;true&quot;
+                class&#x3D;&quot;btn-louer&quot;&gt;Louer
+        &lt;/button&gt;
+        &lt;button *ngIf&#x3D;&quot;location.idLoueur !&#x3D; userId&quot;
+                [disabled]&#x3D;&quot;!location.disponible&quot;
+                class&#x3D;&quot;btn-louer&quot;
+                (click)&#x3D;&quot;louerLocation(location.id, location.idLoueur, location.nom, location.prix)&quot;&gt;
+          Louer
+        &lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="styleData">
+                <p class="comment">
+                    <code>./locations.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">// Couleur principale de fond pour la page
+$bg-color: #151b30;
+
+// Couleurs principales pour les éléments de la carte de location
+$card-bg: #cecece;
+$card-border: #ddd;
+$card-shadow: rgba(0, 0, 0, 0.2);
+
+// Tailles principales pour les éléments de la carte de location
+$card-height: 500px;
+$card-width: 300px;
+$card-padding: 20px;
+
+// Styles principaux pour les éléments de la carte de location
+$border-radius: 10px;
+$font-family: Arial, sans-serif;
+$font-size: 16px;
+$font-weight: 400;
+$line-height: 1.4;
+
+// Appliquer les styles au document HTML
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: $bg-color;
+  font-family: $font-family;
+  font-size: $font-size;
+  line-height: $line-height;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: $bg-color;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+nav button {
+  font-size: 16px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: #ddd;
+  color: #000000;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  nav button {
+    margin-bottom: 10px;
+    width: 100%;
+  }
+}
+button[disabled] {
+  opacity: 0.5; /* Change the opacity to make the button appear grayed out */
+  cursor: not-allowed; /* Change the cursor to indicate the button cannot be clicked */
+}
+
+
+.location-grid {
+  grid-gap: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.location-card {
+  background-color: $card-bg;
+  border: 1px solid $card-border;
+  border-radius: $border-radius;
+  box-shadow: 0 5px 20px $card-shadow;
+  height: $card-height;
+  overflow: hidden;
+  transition: all 0.2s ease-in-out;
+  width: $card-width;
+  &amp;:hover {
+    box-shadow: 0 10px 0px $card-shadow;
+    transform: translateY(-10px);
+  }
+  img {
+    height: 200px;
+    object-fit: cover;
+    width: 100%;
+  }
+  .details {
+    padding: $card-padding;
+    h3, h5 {
+      margin: 0;
+    }
+    h3 {
+      font-size: $font-size * 1.2;
+      font-weight: $font-weight;
+      color: #000000;
+    }
+    h5 {
+      color: #666;
+      font-size: $font-size;
+      font-weight: $font-weight;
+      line-height: $line-height;
+      margin: 10px 0;
+    }
+    button {
+      background-color: #333;
+      border: none;
+      border-radius: 5px;
+      color: #fff;
+      cursor: pointer;
+      font-size: $font-size;
+      font-weight: $font-weight;
+      padding: 10px;
+      transition: all 0.2s ease-in-out;
+      &amp;:hover {
+        background-color: #555;
+        .details {
+          padding: 1rem;
+          text-align: center;
+
+          h3 {
+            margin-bottom: 0.5rem;
+            font-size: 1.5rem;
+          }
+
+          h5 {
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+            color: #888;
+          }
+
+          button {
+            margin-top: 1rem;
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 2rem;
+            background-color: #0d6efd;
+            color: white;
+            font-size: 1rem;
+            cursor: pointer;
+
+            &amp;:hover {
+              background-color: #0b5ed7;
+            }
+
+          }
+
+          .btn-louer {
+            margin-top: 1rem;
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 2rem;
+            background-color: #28a745;
+            color: white;
+            font-size: 1rem;
+            cursor: pointer;
+
+            &amp;:hover {
+              background-color: #1e7e34;
+            }
+
+            &amp;[disabled] {
+              background-color: #ccc;
+              cursor: not-allowed;
+            }
+
+          }
+        }
+      }
+    }
+  }
+}
+.search-bar {
+  font-size: 16px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: #ddd;
+  color: #000000;
+  cursor: pointer;
+}
+
+
+.search-bar input[type&#x3D;&quot;text&quot;]:focus {
+  outline: none;
+  box-shadow: 0 0 5px #85b7d9;
+}
+
+.sort-selector {
+  font-size: 16px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: #ddd;
+  color: #000000;
+  cursor: pointer;
+}
+
+.sort-selector select {
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+.spacer{
+  width: 20px;display: inline-block;
+}
+
+@media (max-width: 600px) {
+  .search-bar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .search-bar input[type&#x3D;&quot;text&quot;] {
+    width: 100%;
+  }
+
+  .sort-selector {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .spacer{
+    height: 20px;
+    display: block;
+  }
+}
+
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><!DOCTYPE html><html lang="en"><head>  <meta charset="UTF-8">  <meta http-equiv="X-UA-Compatible" content="IE=edge">  <meta name="viewport" content="width=device-width, initial-scale=1.0">  <title>LocaJeux</title></head><body><nav>  <button onclick="window.location=\'/addLocation\'">Ajouter une location</button>  <button onclick="window.location=\'/allMyLocations\'">Mes annonces</button>  <button onclick="window.location=\'/locationsAll\'">Mes locations</button>  <button onclick="window.location=\'/liste-chats/\'">Boîte de reception</button>  <button class="logout" onclick="window.location=\'/login/\'">Déconnexion</button></nav><nav>  <button style="background-color:palevioletred" *ngIf="isAdmin" onclick="window.location=\'/locationsAllAdmin\'">Toutes les annonces</button>  <button style="background-color:palevioletred" *ngIf="isAdmin" onclick="window.location=\'/locationsEnCoursAdmin\'">Les locations en cours</button>  <button style="background-color:palevioletred" *ngIf="isAdmin" onclick="window.location=\'/listeAdmin\'">Gestion admins</button></nav><div>  <br><br>  <div style="text-align: center;margin-bottom: 15px">    <input class="search-bar" type="text" [(ngModel)]="searchQuery" placeholder="Rechercher..." (input)="filterLocations()" />    <div class="spacer"></div>    <select class="sort-selector" [(ngModel)]="sortOption" (change)="sortLocations()">      <option value="">Trier par</option>      <option value="az">A-Z</option>      <option value="za">Z-A</option>      <option value="price_asc">Prix croissant</option>      <option value="price_desc">Prix décroissant</option>    </select>  </div>  <div class="location-grid">    <div *ngFor="let location of filteredLocations" class="location-card">      <img [src]="location.photo">      <div class="details">        <h3>{{location.nom}}</h3>        <h5>{{location.description}}</h5>        <h5>{{location.localisation}}</h5>        <h5>{{location.prix}}  €/jour</h5>        <h5 *ngIf="location.disponible" style="color:#00c500">Disponible</h5>        <h5 *ngIf="!location.disponible" style="color:red">Non Disponible</h5>        <button *ngIf="location.idLoueur == userId"                [disabled]="true"                routerLink="/chat/{{location.id}}">Contacter        </button>        <button *ngIf="location.idLoueur != userId"                routerLink="/chat/{{location.id}}">Contacter        </button>        <button *ngIf="location.idLoueur == userId"                [disabled]="true"                class="btn-louer">Louer        </button>        <button *ngIf="location.idLoueur != userId"                [disabled]="!location.disponible"                class="btn-louer"                (click)="louerLocation(location.id, location.idLoueur, location.nom, location.prix)">          Louer        </button>      </div>    </div>  </div></div></body></html></div>'
+    var COMPONENTS = [{'name': 'AddAdminComponent', 'selector': 'app-add-admin'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ChatComponent', 'selector': 'app-chat'},{'name': 'DiscussionComponent', 'selector': 'app-discussion'},{'name': 'FromulaireComponent', 'selector': 'app-fromulaire'},{'name': 'ListeAdminComponent', 'selector': 'app-liste-admin'},{'name': 'ListeChatComponent', 'selector': 'app-liste-chat'},{'name': 'ListeLocationsComponent', 'selector': 'app-liste-locations'},{'name': 'ListLocationsAdminComponent', 'selector': 'app-list-locations-admin'},{'name': 'ListLocationsEncoursAdminComponent', 'selector': 'app-list-locations-encours-admin'},{'name': 'LocationsAllComponent', 'selector': 'app-locations-all'},{'name': 'LocationsComponent', 'selector': 'app-locations'},{'name': 'ModifierLocationComponent', 'selector': 'app-modifier-location'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'LocationsComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'LocationsComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
