@@ -1,6 +1,89 @@
-.message-item {
-    color: black;
+/* Bouton "Retour" */
+.btn-primary {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  cursor: pointer;
 }
+
+.btn-primary:hover {
+  background-color: #0069d9;
+}
+
+/* Titre de la carte "Messages" */
 .message-title {
-    color: black;
+  color: #333;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+/* Styles des messages */
+.message-item {
+  margin-bottom: 1rem;
+  border-radius: 0.25rem;
+  display: flex;
+  align-items: center;
+}
+
+.message-item div {
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+}
+
+.message-item strong {
+  font-weight: bold;
+}
+
+.message-me div {
+  justify-content: flex-end;
+  background-color: #007bff;
+  color: #fff;
+}
+
+.message-other div {
+  justify-content: flex-start;
+  background-color: #6c757d;
+  color: #fff;
+}
+
+.message-item.short {
+  background-color: #b3d4fc;
+}
+
+.message-item.medium {
+  background-color: #78c2ff;
+}
+
+.message-item.long {
+  background-color: #007bff;
+}
+
+/* Alignement des messages */
+.message-me {
+  justify-content: flex-end;
+}
+
+.message-other {
+  justify-content: flex-start;
+}
+
+/* Formulaire de saisie des messages */
+.card-footer {
+  margin-top: 1rem;
+}
+
+.input-group input[type="text"] {
+  width: 70%;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  border: 1px solid #ced4da;
+}
+
+.input-group-append .btn-primary {
+  padding: 0.5rem 1rem;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
 }

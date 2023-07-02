@@ -1,31 +1,32 @@
-<button type="button" class="btn btn-primary" routerLink="/liste-chats">Retour</button><br><br>
+<button type="button" class="btn btn-primary" routerLink="/liste-chats">Retour</button>
+<br><br>
+
 <div class="container">
-    <h1>Discussion</h1>
-    <div class="row">
-      <div class="col-md-6">
-        <div class="card">
-          <div class="card-header" class="message-title">
-            Messages :
-          </div>
-          <div class="card-body">
-            <ul *ngFor="let message of messages ; trackBy:trackById">
-                <li *ngIf="userId==message.idSend" class="message-item"><strong>Moi : </strong>{{ message.Message }}</li>
-                <li *ngIf="userId!=message.idSend" class="message-item"><strong>Lui : </strong>{{ message.Message }}</li>
-              </ul>
-          </div>
-          <div class="container">
-            <div class="card-footer">
-              <form (ngSubmit)="envoyerMessage()">
-                <div class="input-group">
-                  <input type="text" class="form-control" [(ngModel)]="message" [ngModelOptions]="{standalone: true}">
-                  <div class="input-group-append">
-                    <button type="button" class="btn btn-primary" (click)="envoyerMessage()" >Envoyer</button>
-                  </div>
-                </div>
-              </form>
+  <h1>Discussion</h1>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-header message-title">
+          Messages :
+        </div>
+        <div class="card-body">
+          <ul class="messages">
+            <li *ngFor="let message of messages; trackBy: trackById" [ngClass]="{'message-item': true, 'message-me': userId == message.idSend, 'message-other': userId != message.idSend}">
+              <div class="message-bubble">{{ message.Message }}</div>
+            </li>
+          </ul>
+        </div>
+        <div class="card-footer">
+          <form (ngSubmit)="envoyerMessage()">
+            <div class="input-group">
+              <input type="text" class="form-control" [(ngModel)]="message" [ngModelOptions]="{standalone: true}">
+              <div class="input-group-append">
+                <button type="button" class="btn btn-primary" (click)="envoyerMessage()">Envoyer</button>
+              </div>
             </div>
-          </div>
+          </form>
         </div>
       </div>
     </div>
   </div>
+</div>
